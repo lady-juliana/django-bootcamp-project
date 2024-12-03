@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Registered Events</title>
+	</head>
+	<body>
+		<h1>Registered Events</h1>
+		<ul>
+			{% for registration in registrations %}
+			<li>
+				<h3>{{ registration.event.title}}</h3>
+				<p>{{ registration.event.description }}</p>
+				<p>Date:{{ registration.event.date }}</p>
+				
+
+				<form action="{% url 'delete_registration' registration.id%}"method="post">
+					{% csrf_token %}
+					<button type="submit">Delete</button>
+				</form>
+			</li>
+			
+			{% endfor %}
+		</ul>
+	</body>
+</html>
