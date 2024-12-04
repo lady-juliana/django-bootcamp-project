@@ -1,12 +1,12 @@
 from django.shortcuts import render, redirect
-from .forms import CustomUserCreationForm
-from django.contrib.auth.decorators import login_required
+from .forms import CustomUserCreationForm,EventForm
+from django.contrib.auth.decorators import login_required,permission_required
 from . models import Event,Registration
 from django.shortcuts import get_object_or_404
 
 # Create your views here.
 def home(request):
-	return render(request, "events/home.html", {"agenda":"Welcone to our Church. Join us for upcoming events!"})
+	return render(request, "events/home.html", {"agenda":"Welcome to our Church. Join us for upcoming events!"})
 
 def signup(request):
 	if request.method == 'POST':
@@ -40,4 +40,28 @@ def delete_registered_event(request, registration_id):
 	registration = Registration.objects.get(user= request.user, id= registration_id)
 	registration.delete()
 	return redirect ("registered_events")
-	
+
+
+@permission_required('events.add_event', raise_exception=True)
+@login_required
+def create_event(request):
+    if request.method == "POST":
+        form = EventForm(request.POST, request.FILES) 
+        if form.is_valid():
+            event = form.save(commit=False)
+            event.created_by = request.user  
+            event.save()
+            return redirect("event_list") 
+    else:
+        form = EventForm()
+    return render(request, "events/create_event.html", {"form": form})
+
+
+@permission_required("events.delete_event", raise_exception=True)
+@login_required
+def delete_event(request, event_id):
+    event = get_object_or_404(Event, id=event_id)  
+    if request.method == "POST": 
+        event.delete()
+        return redirect("events_list") 
+    return render(request, "delete_event_confirm.html", {"event": event})

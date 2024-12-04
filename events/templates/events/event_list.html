@@ -6,10 +6,13 @@
 		<title>Event List</title>
 	</head>
 	<body>
+		
 		<h1>Up coming Events</h1>
 		<ul>
 			{% for event in events   %}
 			<li> 
+				Image:
+				<img src="{{ event.image.url }}" alt=""> 
 				<h3>{{event.title}}title</h3>
 				<p>{{ event.description }}description</p>
 				<p>Date:{{event.date }}date</p>

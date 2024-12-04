@@ -10,6 +10,8 @@
 		<ul>
 			{% for registration in registrations %}
 			<li>
+				Image:
+				<img src="{{ registration.event.image.url }}" alt=""> 
 				<h3>{{ registration.event.title}}</h3>
 				<p>{{ registration.event.description }}</p>
 				<p>Date:{{ registration.event.date }}</p>
