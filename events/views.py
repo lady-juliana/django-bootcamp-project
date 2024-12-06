@@ -19,10 +19,16 @@ def signup(request):
 		return render(request, "registration/signup.html", {"form":form})		
 	
 
-@login_required
+# @login_required
 def events_list(request):
 	events = Event.objects.all()
-	return render(request, "events/event_list.html",{"events":events})
+
+	if request.user.is_authenticated:
+		registered_events = Registration.objects.filter(user=request.user)
+	else:
+		registered_events = []
+
+	return render(request, "events/event_list.html",{"events":events,'registered_events': registered_events})
 
 @login_required
 def register_event(request, event_id):

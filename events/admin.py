@@ -7,9 +7,9 @@ from django.contrib.auth.admin import UserAdmin
 admin.site.register(CustomUser, UserAdmin)
 
 class EventAdmin(admin.ModelAdmin):
-	list_display = ('title', 'date', 'created_by')
+	list_display = ('title', 'date_time', 'created_by')
 	search_fields = ('title',)
-	list_filter = ('date',)
+	list_filter = ('date_time',)
 
 admin.site.register(Event, EventAdmin)	
 

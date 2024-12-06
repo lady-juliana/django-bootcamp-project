@@ -31,7 +31,8 @@ ALLOWED_HOSTS = []
 AUTH_USER_MODEL = 'events.CustomUser'
 # Application definition
 
-LOGIN_REDIRECT_URL='home'
+LOGIN_REDIRECT_URL='event_list'
+LOGOUT_REDIRECT_URL='home'
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -120,6 +121,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field

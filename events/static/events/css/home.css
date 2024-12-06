@@ -1,3 +1,125 @@
-a {
-	color:blue;
+.church-name{
+	color:green;
+	font-family: "Dancing Script"
 }
+
+.church-image{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-right: 0px;
+	margin-right:0px;
+	position:relative
+	
+}
+
+.church-image-text{
+	position:absolute;
+	color:black;
+	font-size: 50px;
+	top:10%
+}
+
+.intro{
+	font-size: 25px;
+}
+
+/* .events-button{
+	width: 40px;
+	border: solid;
+	padding:10px 20px 10px 20px;
+
+} */
+
+.event-text{
+	font-size: 30px;
+}
+
+.upcoming-button{
+	width:200px;
+	padding:10px 20px 10px 20px;
+	background-color: blue;
+	border: none;
+	border-radius: 25px;
+	
+}
+
+.upcoming-button a {
+	color:white;
+}
+.upcoming-button:hover{
+	background-color: rgb(109, 109, 245);
+}
+
+.events-title h1{
+	display: flex;
+	justify-content: center;
+}
+
+.events-title p{
+	font-size: 25px;
+	
+}
+.logout-button{
+	border:none;
+}
+.register-button{
+	width:100px;
+	padding:10px 20px 10px 20px;
+	background-color: rgb(93, 93, 245);
+	border: none;
+	border-radius: 5px;
+	color:white;
+}
+.register-button:hover{
+	background-color: rgb(73, 73, 212);
+}
+
+.sign-up{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	
+}
+
+.sign-up div{
+	padding: 20px 10px;
+}
+
+.sign-up div button{
+	padding:5px 110px;
+}
+.go-back-button{
+	display: flex;
+	align-items:flex-end;
+	justify-content: center;
+}
+.registration-welcome{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+
+
+/* 
+.button-style{
+	width: 90px;
+	border: none;
+	border-radius: 5px;
+	background-color:  blue ;
+	padding: 5px 10px;
+	margin: 0px 0px;
+}
+.button-style a{
+	color:white;
+}
+
+.login-update{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	justify-content: center;
+	
+	
+} */

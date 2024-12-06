@@ -13,7 +13,7 @@ class CustomUser (AbstractUser):
 class Event(models.Model):
 	title = models.CharField(max_length=300)
 	description = models.TextField()
-	date =models.DateField()
+	date_time =models.DateTimeField()
 	image = models.ImageField(upload_to='event_flyers/', blank=True, null=True)
 	created_by = models.ForeignKey(
 		settings.AUTH_USER_MODEL, on_delete= models.CASCADE, related_name='created_events'

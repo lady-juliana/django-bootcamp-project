@@ -2,12 +2,46 @@
 {% load static %}
 <html lang="en">
 	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<meta charset="utf-8">
+		<meta content="width=device-width, initial-scale=1.0" name="viewport">
+		<meta name="description" content="">
+		<meta name="keywords" content="">
 		<title>Church Events</title>
-		<link rel="stylesheet" href="{% static 'events/css/home.css' %}">
+
+		<!-- Favicons -->
+		<link href="{% static 'events/img/favicon.png" rel="icon' %}">
+		<link href="{% static 'events/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+
+				
+		<!-- Fonts -->
+		<link href="https://fonts.googleapis.com" rel="preconnect">
+		<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+		<!--Customized Font-->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+
+		<!-- Vendor CSS Files -->
+		<link href="{% static 'events/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+		<link href="{% static 'events/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+		<link href="{% static 'events/vendor/aos/aos.css' %}" rel="stylesheet">
+		<link href="{% static 'events/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+		<link href="{% static 'events/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+	  
+		<!-- Main CSS File -->
+		<link href="{% static 'events/css/main.css' %}" rel="stylesheet">
+
+		
+		<!-- customized css -->
+		<link rel="stylesheet" href="{% static 'events/css/home.css' %}"> 
+
+
 	</head>
-	<body>
+	{% comment %} <body>
 		<header>
 			<h1>Church Events</h1>
 			<img src="{% static 'events/img/church-image.jpg'%}" alt="Church Image">
@@ -20,5 +54,216 @@
 			</nav>
 		</header>
 		
-	</body>
+	</body> {% endcomment %}
+
+	<body class="starter-page-page">
+
+		<header id="header" class="header d-flex align-items-center sticky-top">
+		  <div class="container-fluid container-xl position-relative d-flex align-items-center">
+	  
+			<a href="index.html" class="logo d-flex align-items-center me-auto">
+			  <!-- Uncomment the line below if you also wish to use an image logo -->
+			  <img src="{% static 'events/img/church-logo.webp' %}" alt="">
+			  <h1 class="church-name">The Church of Churches Ministries</h1>
+			</a>
+	  
+			<nav id="navmenu" class="navmenu">
+			  <ul>
+				<li><a href="{% url 'home' %}">Home<br></a></li>
+				<li><a href="#about">About</a></li>
+				<li><a href="{% url 'event_list' %}">Events<br></a></li>
+				<li><a href="#services">Testimonies</a></li>
+				{% comment %} <li><a href="#portfolio">Events</a></li> {% endcomment %}
+				
+			
+				{% comment %} <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+				  <ul>
+					<li><a href="#">Dropdown 1</a></li>
+					<li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+					  <ul>
+						<li><a href="#">Deep Dropdown 1</a></li>
+						<li><a href="#">Deep Dropdown 2</a></li>
+						<li><a href="#">Deep Dropdown 3</a></li>
+						<li><a href="#">Deep Dropdown 4</a></li>
+						<li><a href="#">Deep Dropdown 5</a></li>
+					  </ul>
+					</li>
+					<li><a href="#">Dropdown 2</a></li>
+					<li><a href="#">Dropdown 3</a></li>
+					<li><a href="#">Dropdown 4</a></li>
+				  </ul>
+				</li> {% endcomment %}
+				{% comment %} <li class="listing-dropdown"><a href="#"><span>Listing Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+				  <ul>
+					<li>
+					  <a href="#">Column 1 link 1</a>
+					  <a href="#">Column 1 link 2</a>
+					  <a href="#">Column 1 link 3</a>
+					</li>
+					<li>
+					  <a href="#">Column 2 link 1</a>
+					  <a href="#">Column 2 link 2</a>
+					  <a href="#">Column 3 link 3</a>
+					</li>
+					<li>
+					  <a href="#">Column 3 link 1</a>
+					  <a href="#">Column 3 link 2</a>
+					  <a href="#">Column 3 link 3</a>
+					</li>
+					<li>
+					  <a href="#">Column 4 link 1</a>
+					  <a href="#">Column 4 link 2</a>
+					  <a href="#">Column 4 link 3</a>
+					</li>
+					<li>
+					  <a href="#">Column 5 link 1</a>
+					  <a href="#">Column 5 link 2</a>
+					  <a href="#">Column 5 link 3</a>
+					</li>
+				  </ul>
+				</li> {% endcomment %}
+			  </ul>
+			  <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+			</nav>
+	  
+			<a class="btn-getstarted flex-md-shrink-0" href="{% url 'login' %}">Login</a>
+			<a class="btn-getstarted flex-md-shrink-0" href="{% url 'signup' %}">Sign Up</a>
+	  
+		  </div>
+		</header>
+
+
+		<div class="church-image">
+			<img src="{% static 'events/img/church-image.jpg'%}" alt="Church Image">
+			<p class="church-image-text">Transforming Lives Through the Power of the Cross</p>
+		</div>
+	  
+		<main class="main">
+		  <div class="page-title">
+			<div class="heading">
+			  <div class="container">
+				<div class="row d-flex justify-content-center text-center">
+					
+					<p class="intro">At The 
+						<em>Church of Churches Ministries</em>, we believe in building a vibrant community where everyone is welcome to grow, connect, and celebrate. Get involved, and experience the joy of fellowship. Whether you're new here or a long-time member, there's a place for you!"
+					</p>
+
+					<p class="event-text"><b>Explore our upcoming events</b></p>
+					<button class="upcoming-button">
+						<a   href="{%url 'event_list' %}">Upcoming Events</a>
+					</button>
+				</div>
+			  </div>
+			</div>
+		  </div><!-- End Page Title -->
+	  
+		  <!-- Starter Section Section -->
+		  {% comment %} <section id="starter-section" class="starter-section section">
+	  
+			<!-- Section Title -->
+			<div class="container section-title" data-aos="fade-up">
+			  <h2>Starter Section</h2>
+			  <p>Extended Section Title</p>
+			</div><!-- End Section Title -->
+	  
+			<div class="container" data-aos="fade-up">
+			   <p>Use this page as a starter for your own custom pages.</p>
+			</div>
+	  
+		  </section><!-- /Starter Section Section --> {% endcomment %}
+	  
+		</main>
+	  
+		<footer id="footer" class="footer">
+	  
+		  <div class="footer-newsletter">
+			<div class="container">
+			  <div class="row justify-content-center text-center">
+				<div class="col-lg-6">
+			
+				  <p>© 2024 The Church of Churches Ministries. All rights reserved.</p>
+
+				  
+				  {% comment %} <form action="forms/newsletter.php" method="post" class="php-email-form">
+						<div class="newsletter-form"><input type="email" name="email"><input type="submit" value="Subscribe"></div>
+						<div class="loading">Loading</div>
+						<div class="error-message"></div>
+						<div class="sent-message">Your subscription request has been sent. Thank you!</div>
+				  </form> {% endcomment %}
+				</div>
+			  </div>
+			</div>
+		  </div>
+	  
+				{% comment %} <div class="container footer-top">
+					<div class="row gy-4">
+						<div class="col-lg-4 col-md-6 footer-about">
+							<a href="index.html" class="d-flex align-items-center">
+							<span class="sitename">FlexStart</span>
+							</a>
+							<div class="footer-contact pt-3">
+							<p>A108 Adam Street</p>
+							<p>New York, NY 535022</p>
+							<p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
+							<p><strong>Email:</strong> <span>info@example.com</span></p>
+							</div>
+					</div>
+			
+					<div class="col-lg-2 col-md-3 footer-links">
+							<h4>Useful Links</h4>
+							<ul>
+							<li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
+							<li><i class="bi bi-chevron-right"></i> <a href="#">About us</a></li>
+							<li><i class="bi bi-chevron-right"></i> <a href="#">Services</a></li>
+							<li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
+							</ul>
+					</div>
+			
+					<div class="col-lg-2 col-md-3 footer-links">
+							<h4>Our Services</h4>
+							<ul>
+							<li><i class="bi bi-chevron-right"></i> <a href="#">Web Design</a></li>
+							<li><i class="bi bi-chevron-right"></i> <a href="#">Web Development</a></li>
+							<li><i class="bi bi-chevron-right"></i> <a href="#">Product Management</a></li>
+							<li><i class="bi bi-chevron-right"></i> <a href="#">Marketing</a></li>
+							</ul>
+					</div>
+			
+					<div class="col-lg-4 col-md-12">
+							<h4>Follow Us</h4>
+							<p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
+							<div class="social-links d-flex">
+							<a href=""><i class="bi bi-twitter-x"></i></a>
+							<a href=""><i class="bi bi-facebook"></i></a>
+							<a href=""><i class="bi bi-instagram"></i></a>
+							<a href=""><i class="bi bi-linkedin"></i></a>
+							</div>
+					</div>
+			
+					</div>
+				</div>
+			{% endcomment %}
+	
+		</footer>
+	  
+		<!-- Scroll Top -->
+		<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+	  
+		<!-- Vendor JS Files -->
+		<script src="{% static 'events/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+		<script src="{% static 'events/vendor/php-email-form/validate.js' %}"></script>
+		<script src="{% static 'events/vendor/aos/aos.js' %}"></script>
+		<script src="{% static 'events/vendor/glightbox/js/glightbox.min.js' %}"></script>
+		<script src="{% static 'events/vendor/purecounter/purecounter_vanilla.js' %}"></script>
+		<script src="{% static 'events/vendor/imagesloaded/imagesloaded.pkgd.min.js' %}"></script>
+		<script src="{% static 'events/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+		<script src="{% static 'events/vendor/swiper/swiper-bundle.min.js' %}"></script>
+	  
+		<!-- Main JS File -->
+		<script src="{% static 'events/js/main.js' %}"></script>
+	  
+	  </body>
+	
+
+
 </html>
