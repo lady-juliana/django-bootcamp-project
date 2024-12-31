@@ -47,7 +47,7 @@
 			<div class="container-fluid container-xl position-relative d-flex align-items-center">
 				<a href="index.html" class="logo d-flex align-items-center me-auto">
 					<img src="{% static 'events/img/church-logo.webp' %}" alt="">
-					<h1 class="church-name">The Church of Churches Ministries</h1>
+					<h1 class="church-name">Calvary Ministries</h1>
 				</a>
 		
 				<nav id="navmenu" class="navmenu">
@@ -142,9 +142,11 @@
 											</p>
 											{% if user.is_authenticated %}
 											<div class="read-more">
-													<form action="{% url 'delete_registration' registration.id%}"method="post">
-													{% csrf_token %}
-													<button type="submit" class="register-button" >Delete</button>
+												<form 
+												action="{% url 'delete_registration' registration.id%}"
+												method="post">
+												{% csrf_token %}
+												<button type="submit" class="register-button" >Delete</button>
 												</form>
 											</div>
 											{% endif %}
@@ -177,7 +179,9 @@
 
 
 
-		<footer id="footer" class="footer">
+		<footer 
+		id="footer" 
+		class="footer">
 			<div class="footer-newsletter">
 			  <div class="container">
 				<div class="row justify-content-center text-center">
@@ -188,7 +192,7 @@
 					</div> 
 				</div> 
 			</div> 
-	  
+			</div>
 		</footer>
 	</body>
 </html>
@@ -345,9 +349,11 @@
 		<p>Date:{{ registration.event.date }}</p>
 		
 
-		<form action="{% url 'delete_registration' registration.id%}"method="post">
-			{% csrf_token %}
-			<button type="submit">Delete</button>
+		<form 
+		action="{% url 'delete_registration' registration.id%}"
+		method="post">
+		{% csrf_token %}
+		<button type="submit">Delete</button>
 		</form>
 	</li>
 	
